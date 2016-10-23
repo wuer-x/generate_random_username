@@ -11,7 +11,7 @@ def main(count=3, name_type='camel'):
     random_index = get_random_numbers(count, len(word_source_list) - 1)
     
     for i in range(len(random_index)):
-        name_list.append(word_source_list[i])
+        name_list.append(word_source_list[random_index[i]])
 
     if name_type.lower() == 'camel':
         return ''.join(name_list)
@@ -25,7 +25,7 @@ def main(count=3, name_type='camel'):
 def get_random_numbers(count, max_value):
     rst = []
     for i in range(count):
-        rst.append(int(random.random() * max_value))
+        rst.append(int(random.randint(0,max_value)))
     return rst
 
 
